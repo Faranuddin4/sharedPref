@@ -14,11 +14,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.aksa.sharepref.ui.theme.SharePrefTheme
 
 class MainActivity : ComponentActivity() {
-    private var token by sharedPreferences("token")
+    private var token by sharedPreferences("Token")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        token = "Hello"
-        Log.e("hi", token)
+        token = MyString(name = "Faran uddin")
+        Log.e("hi", token.toString())
         setContent {
             SharePrefTheme {
                 // A surface container using the 'background' color from the theme
