@@ -7,10 +7,10 @@ import com.google.gson.GsonBuilder
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-data class MyString(val name: String)
+data class MyString(val name: String = "")
 class SharedPrefDelegates(
     val context: Context,
-    val name: String
+    val name: String,
 ) : ReadWriteProperty<Any?, MyString?> {
     private val sharedPreferences by lazy {
         context.getSharedPreferences("my_pref", ComponentActivity.MODE_PRIVATE)
