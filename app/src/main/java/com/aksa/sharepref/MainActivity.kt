@@ -15,10 +15,13 @@ import com.aksa.sharepref.ui.theme.SharePrefTheme
 
 class MainActivity : ComponentActivity() {
     private var token by sharedPreferences("Token")
+    private var encryptedSharedPrefDelegates by encryptedSharedPreferences("Token")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        token = MyString(name = "Faran uddin")
+        token = MyString(name = "uddin")
+        encryptedSharedPrefDelegates = MyString(name = "Faran uddin")
         Log.e("hi", token.toString())
+        Log.e("hi", encryptedSharedPrefDelegates.toString())
         setContent {
             SharePrefTheme {
                 // A surface container using the 'background' color from the theme
